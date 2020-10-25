@@ -234,7 +234,7 @@ class Desktop:
         try:
             background = Desktop.loadSettings()["background"]
         except Exception:
-            background = f"{Desktop.getPath()}/themes/default/backgrounds/background.jpg"
+            background = f"{Desktop.getPath()}/images/background.jpg"
         return background
 
     @staticmethod
