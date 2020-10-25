@@ -1,6 +1,8 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React from "react";
 import ReactDOM from "react-dom";
 import styled from 'styled-components';
+import Button from 'react-bootstrap/Button'
 
 const Wrapper = styled.div`
     height: 100%;
@@ -13,6 +15,7 @@ const Wrapper = styled.div`
     font-family: sans-serif;
     letter-spacing: 2px;
     font-weight: lighter;
+    flex-direction: column;
 `;
 
 const timeRef = React.createRef();
@@ -24,6 +27,16 @@ const App = () => (
                 time()
             }
         </div>
+        <Button
+            className={"m-2"}
+            variant={"light"}
+            size={"sm"}
+            onClick={() => {
+                JAK.Bridge.showInspector();
+            }}
+        >
+            Inspector
+        </Button>
     </Wrapper>
 );
 
