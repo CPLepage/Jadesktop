@@ -20,6 +20,8 @@ const Wrapper = styled.div`
 
 const timeRef = React.createRef();
 
+let inspectorShowed = false;
+
 const App = () => (
     <Wrapper>
         <div ref={timeRef}>
@@ -32,7 +34,11 @@ const App = () => (
             variant={"light"}
             size={"sm"}
             onClick={() => {
-                JAK.Bridge.showInspector();
+                if(inspectorShowed)
+                    JAK.Bridge.hideInspector()
+                else
+                    JAK.Bridge.showInspector()
+                inspectorShowed = !inspectorShowed;
             }}
         >
             Inspector
