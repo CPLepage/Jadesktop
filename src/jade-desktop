@@ -160,7 +160,7 @@ def main():
         },
 
         webview = {
-            "webContents": f"{Desktop.getPath()}/themes/default/index.html",
+            "webContents": f"{Desktop.getPath()}/themes/default/dist/index.html",
             "webChannel": { "active": True, "sharedOBJ": SharedObj() },
             "injectJavaScript": {"JavaScript": Desktop.getJS(), "name": "JADE"},
             "addCSS": Session.userCSS()

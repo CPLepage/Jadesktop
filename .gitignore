@@ -125,3 +125,5 @@ cmake-build-debug/
 !.vscode/extensions.json
 .history
 
+### Node & NPM ###
+*node_modules*
