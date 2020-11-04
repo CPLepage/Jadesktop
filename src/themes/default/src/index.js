@@ -1,8 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-grid-layout/css/styles.css';
+import 'react-resizable/css/styles.css';
 import React from "react";
 import ReactDOM from "react-dom";
 import styled from 'styled-components';
-import Button from 'react-bootstrap/Button'
+import Button from 'react-bootstrap/Button';
+import GridLayout from 'react-grid-layout';
 
 const Wrapper = styled.div`
     height: 100%;
@@ -16,12 +19,23 @@ const Wrapper = styled.div`
     letter-spacing: 2px;
     font-weight: lighter;
     flex-direction: column;
+    & .layout{
+        width: 100%;
+    }
+    & .react-resizable{
+        background-color: #48494c;
+    }
 `;
 
 const timeRef = React.createRef();
 
 let inspectorShowed = false;
 
+const layout = [
+    {i: 'a', x: 0, y: 0, w: 1, h: 2},
+    {i: 'b', x: 1, y: 0, w: 3, h: 2, minW: 2, maxW: 4},
+    {i: 'c', x: 4, y: 0, w: 1, h: 2}
+];
 const App = () => (
     <Wrapper>
         <div ref={timeRef}>
@@ -43,6 +57,11 @@ const App = () => (
         >
             Inspector
         </Button>
+        <GridLayout className="layout" layout={layout} cols={12} rowHeight={30} width={window.innerWidth}>
+            <div key="a">a</div>
+            <div key="b">b</div>
+            <div key="c">c</div>
+        </GridLayout>
     </Wrapper>
 );
 
